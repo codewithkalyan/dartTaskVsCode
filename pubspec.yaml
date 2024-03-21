@@ -1,0 +1,5 @@
+name: my_dart_program
+dependencies:
+  http: ^1.2.1
+environment:
+  sdk: '^3.3.0'

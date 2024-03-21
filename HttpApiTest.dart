@@ -1,11 +1,21 @@
 import 'package:http/http.dart' as http;
+import 'dart:convert';
 
-void main() {
-var url = Uri.https('jsonplaceholder.typicode.com', 'users');
 
- final res =http.get(url);
+void main() async{
+var url = Uri.parse('https://reqres.in/api/users?page=2');
 
- print(res);
+try {
+
+
+ final res =await http.get(url);
+ print(jsonDecode(res.body));
+ }
+ catch(e) {
+  print("Some unexcpected error occured ");
+ }
+
+ 
 }
  void get (){
   

@@ -9,7 +9,7 @@ void main() async {
   if(response.statusCode==200) {
 
     final jsonCode=jsonDecode(response.body);
-
+    
     final result=Resource.getJson(jsonCode['data']);
 
     print(result);

@@ -1,13 +1,25 @@
 import 'package:http/http.dart' as http;
-
+import 'dart:io';
 
 void main() {
   createUser();
 }
 
 Future<void> createUser() async {
-  var url = Uri.parse('https://reqres.in/api/users');
-  var user = User(name: 'morpheus', job: 'leader');
+
+  var baseUrl="https://reqres.in";
+  print("Enter the Path: ");
+  String path=stdin.readLineSync()!;
+  var url=Uri.parse(baseUrl+path);
+
+///api/users
+
+  print("Enter the name and Jobs");
+   
+   String names=stdin.readLineSync()!;
+   String jobs=stdin.readLineSync()!;
+
+  var user = User(name: names, job: jobs);
 
   var response = await http.post(
     url,
